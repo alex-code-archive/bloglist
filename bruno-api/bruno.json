@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Blog list",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
