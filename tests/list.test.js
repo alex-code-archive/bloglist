@@ -7,3 +7,13 @@ test('dummy returns one', () => {
   const result = listHelper.dummy(blogs)
   assert.strictEqual(result, 1)
 })
+
+describe('total likes', () => {
+  test('of empty list is zero', () => {
+    assert.strictEqual()
+  })
+
+  test('when list has only one blog, equals the likes of that')
+
+  test('of a bigger list is calculated correctly')
+})
