@@ -12,7 +12,18 @@ const totalLikes = (blogs) => {
   }
 }
 
+const favoriteBlog = (blogs) => {
+  const favorite = {}
+  blogs.reduce((acc, curVal) => {
+    console.log('INFO', acc, curVal)
+    if (curVal.likes > acc.likes) {
+      favorite = curVal
+    }
+  })
+  return favorite
+}
 module.exports = {
   dummy,
-  totalLikes
+  totalLikes,
+  favoriteBlog
 }
