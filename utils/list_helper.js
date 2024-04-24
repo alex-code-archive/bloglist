@@ -1,4 +1,5 @@
 const blog = require('../models/blog')
+const _ = require('lodash')
 
 const dummy = (blogs) => {
   return 1
@@ -26,8 +27,22 @@ const favoriteBlog = (blogs) => {
   return favorite
 }
 
+const mostBlogs = (blogs) => {
+  const result = []
+  blogs.map((blog) => {
+    if (blog.author in result) {
+      result.count += 1
+    } else {
+      result.concat({ author: blog.author, count: 1 })
+    }
+  })
+  console.log(result)
+  return _.max(result)
+}
+
 module.exports = {
   dummy,
-  totalLikes,
-  favoriteBlog
+  favoriteBlog,
+  mostBlogs,
+  totalLikes
 }
