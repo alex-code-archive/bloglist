@@ -3,10 +3,12 @@ const assert = require('node:assert')
 const listHelper = require('../utils/list_helper')
 const { oneBlog, multipleBlogs } = require('../utils/blogs')
 
-test('dummy returns one', () => {
-  const blogs = []
-  const result = listHelper.dummy(blogs)
-  assert.strictEqual(result, 1)
+describe('dummy', () => {
+  test('dummy returns one', () => {
+    const blogs = []
+    const result = listHelper.dummy(blogs)
+    assert.strictEqual(result, 1)
+  })
 })
 
 describe('total likes', () => {
@@ -24,8 +26,10 @@ describe('total likes', () => {
 })
 
 describe('favorite blog', () => {
-  assert.deepStrictEqual(
-    listHelper.favoriteBlog(multipleBlogs),
-    multipleBlogs[2]
-  )
+  test('blog with most likes is returned as favorite blog', () => {
+    assert.deepStrictEqual(
+      listHelper.favoriteBlog(multipleBlogs),
+      multipleBlogs[2]
+    )
+  })
 })

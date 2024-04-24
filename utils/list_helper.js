@@ -1,3 +1,5 @@
+const blog = require('../models/blog')
+
 const dummy = (blogs) => {
   return 1
 }
@@ -13,15 +15,17 @@ const totalLikes = (blogs) => {
 }
 
 const favoriteBlog = (blogs) => {
-  const favorite = {}
-  blogs.reduce((acc, curVal) => {
-    console.log('INFO', acc, curVal)
-    if (curVal.likes > acc.likes) {
-      favorite = curVal
+  let mostLikes = 0
+  let favorite = {}
+  blogs.map((blog) => {
+    if (blog.likes > mostLikes) {
+      mostLikes = blog.likes
+      favorite = blog
     }
   })
   return favorite
 }
+
 module.exports = {
   dummy,
   totalLikes,
