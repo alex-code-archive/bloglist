@@ -42,3 +42,12 @@ describe('top blogger', () => {
     })
   })
 })
+
+describe('most likes', () => {
+  test('blogger with the most likes', () => {
+    assert.deepStrictEqual(listHelper.mostLikes(multipleBlogs), {
+      author: 'Edsger W. Dijkstra',
+      likes: 12
+    })
+  })
+})
